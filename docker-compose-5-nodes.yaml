@@ -58,7 +58,8 @@ services:
             --peering static \
             --peers tcp://validator-2:8800
             --peers tcp://validator-5:8800
-            --scheduler serial\
+            --scheduler serial & disown &&
+        tail -f /dev/null \
     \""
     stop_signal: SIGKILL
 
@@ -84,8 +85,8 @@ services:
             --peering static \
             --peers tcp://validator-1:8800
             --peers tcp://validator-4:8800
-            --scheduler serial\
-
+            --scheduler serial & disown && \
+        tail -f /dev/null \
     \""
     stop_signal: SIGKILL
 
@@ -111,8 +112,8 @@ services:
             --peering static \
             --peers tcp://validator-4:8800
             --peers tcp://validator-5:8800
-            --scheduler serial \
-
+            --scheduler serial & disown && \
+        tail -f /dev/null \
     \""
     stop_signal: SIGKILL
 
@@ -138,8 +139,8 @@ services:
             --peering static \
             --peers tcp://validator-2:8800
             --peers tcp://validator-3:8800
-            --scheduler serial \
-
+            --scheduler serial & disown && \
+        tail -f /dev/null \
     \""
     stop_signal: SIGKILL
 
@@ -165,8 +166,8 @@ services:
             --peering static \
             --peers tcp://validator-1:8800
             --peers tcp://validator-3:8800
-            --scheduler serial \
-
+            --scheduler serial & disown && \
+        tail -f /dev/null \
     \""
     stop_signal: SIGKILL
 
